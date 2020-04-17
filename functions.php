@@ -183,5 +183,54 @@ function declare_sensei_support()
 {
 	add_theme_support('sensei');
 }
+function buy_now_submit_form()
+{
+?>
+	<script>
+		jQuery(document).ready(function() {
+			// listen if someone clicks 'Buy Now' button
+			jQuery('#buy_now_button').click(function() {
+				// set value to 1
+				jQuery('#is_buy_now').val('1');
+				//submit the form
+				jQuery('form.cart').submit();
+			});
+		});
+	</script>
+<?php
+}
+add_action('woocommerce_after_add_to_cart_form', 'buy_now_submit_form');
+add_filter('woocommerce_add_to_cart_redirect', 'redirect_to_checkout');
+function redirect_to_checkout($redirect_url)
+{
+	if (isset($_REQUEST['is_buy_now']) && $_REQUEST['is_buy_now']) {
+		global $woocommerce;
+		$redirect_url = wc_get_checkout_url();
+	}
+	return $redirect_url;
+}
+add_filter('woocommerce_product_tabs', 'misha_remove_description_tab', 11);
+
+function misha_remove_description_tab($tabs)
+{
+
+	unset($tabs['description']);
+	unset($tabs['additional_information']);
+	unset($tabs['reviews']);
+	return $tabs;
+}
+remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_title', 5);
+
+function woocommerce_template_single_title_custom()
+{
+	$additional_text = '';
+	the_title('<h2 class="product_title entry-title">', $additional_text . '</h2>');
+}
+add_action('woocommerce_single_product_summary', 'woocommerce_template_single_title_custom', 5);
 
 
+function woocommerce_products_payments()
+{
+	get_template_part('template-parts/woo/product', 'payments');
+}
+add_action('woocommerce_before_add_to_cart_button', 'woocommerce_template_single_title_custom', 5);

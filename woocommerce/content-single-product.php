@@ -32,44 +32,82 @@ if (post_password_required()) {
 ?>
 <div id="product-<?php the_ID(); ?>" <?php wc_product_class(); ?>>
     <?php get_template_part('template-parts/woo/product', 'content'); ?>
-    <?php
-    /**
-     * Hook: woocommerce_before_single_product_summary.
-     *
-     * @hooked woocommerce_show_product_sale_flash - 10
-     * @hooked woocommerce_show_product_images - 20
-     */
-    do_action('woocommerce_before_single_product_summary');
-    ?>
-
-    <div class="summary entry-summary">
+    <section id="buy" class="course-section">
+        <h2>Comprar Curso</h2>
         <?php
         /**
-         * Hook: woocommerce_single_product_summary.
+         * Hook: woocommerce_before_single_product_summary.
          *
-         * @hooked woocommerce_template_single_title - 5
-         * @hooked woocommerce_template_single_rating - 10
-         * @hooked woocommerce_template_single_price - 10
-         * @hooked woocommerce_template_single_excerpt - 20
-         * @hooked woocommerce_template_single_add_to_cart - 30
-         * @hooked woocommerce_template_single_meta - 40
-         * @hooked woocommerce_template_single_sharing - 50
-         * @hooked WC_Structured_Data::generate_product_data() - 60
+         * @hooked woocommerce_show_product_sale_flash - 10
+         * @hooked woocommerce_show_product_images - 20
          */
-        do_action('woocommerce_single_product_summary');
+        do_action('woocommerce_before_single_product_summary');
         ?>
-    </div>
 
-    <?php
-    /**
-     * Hook: woocommerce_after_single_product_summary.
-     *
-     * @hooked woocommerce_output_product_data_tabs - 10
-     * @hooked woocommerce_upsell_display - 15
-     * @hooked woocommerce_output_related_products - 20
-     */
-    do_action('woocommerce_after_single_product_summary');
-    ?>
+        <div class="summary entry-summary">
+            <?php
+            /**
+             * Hook: woocommerce_single_product_summary.
+             *
+             * @hooked woocommerce_template_single_title - 5
+             * @hooked woocommerce_template_single_rating - 10
+             * @hooked woocommerce_template_single_price - 10
+             * @hooked woocommerce_template_single_excerpt - 20
+             * @hooked woocommerce_template_single_add_to_cart - 30
+             * @hooked woocommerce_template_single_meta - 40
+             * @hooked woocommerce_template_single_sharing - 50
+             * @hooked WC_Structured_Data::generate_product_data() - 60
+             */
+            do_action('woocommerce_single_product_summary');
+            ?>
+        </div>
+
+        <?php
+        /**
+         * Hook: woocommerce_after_single_product_summary.
+         *
+         * @hooked woocommerce_output_product_data_tabs - 10
+         * @hooked woocommerce_upsell_display - 15
+         * @hooked woocommerce_output_related_products - 20
+         */
+        do_action('woocommerce_after_single_product_summary');
+        ?>
+    </section>
+    <section class="lower-btns">
+        <ul>
+            <li data-tab="buy" class="buy">COMPRAR CURSO</li>
+            <li data-tab="about">VER TEMARIO</li>
+            <li data-tab="who" class="hide">VER PARTICIPANTES</li>
+            <li data-tab="others" class="hide">VER OTROS CURSOS</li>
+        </ul>
+    </section>
 </div>
 
 <?php do_action('woocommerce_after_single_product'); ?>
+<script>
+    (function($) {
+        $(document).ready(function() {
+            $('.tabs ul li, .lower-btns ul li').on('click', function() {
+                var data = $(this).data('tab');
+                console.log(data);
+                $('.tabs ul li').removeClass('active');
+                $(this).addClass('active');
+                $('.course-section').removeClass('active');
+                $('#' + data).addClass('active');
+                if (data === 'who') {
+                    $('.main-section').hide();
+                    $('.faqs').hide();
+                    $('#'+data).css('width', '100%');
+                } else {
+                    $('.main-section').show();
+                }
+                if (data === 'buy') {
+                    $('.main-section').hide();
+                    $('#'+data).addClass('flex');
+                } else {
+                    $('.main-section').show();
+                }
+            })
+        });
+    })(jQuery);
+</script>

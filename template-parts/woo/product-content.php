@@ -14,7 +14,7 @@
     </ul>
 </nav>
 <section class="main-section">
-    <section id="what" class="course-section">
+    <section id="what" class="course-section active">
         <div class="container">
             <div class="course-desc pad50">
                 <?php the_field('descripcion'); ?>
@@ -39,15 +39,82 @@
         </div>
     </section>
     <section id="about" class="course-section">
-
+        <div class="container">
+            <?php
+            if (have_rows('temario')) :
+                while (have_rows('temario')) : the_row();
+            ?>
+                    <div class="green-back center heroic pad0">
+                        <h3><?php the_sub_field('titulo_modulo'); ?></h3>
+                    </div>
+                    <?php $type = get_sub_field('tipo_de_clase'); ?>
+                    <ul class="units">
+                        <?php
+                        $i = 0;
+                        if (have_rows('clases')) :
+                            while (have_rows('clases')) : the_row();
+                                $i++;
+                        ?>
+                                <li>
+                                    <span class="unit"><?= $type; ?> <?= $i; ?></span>
+                                    <p><?php the_sub_field('descripcion_de_la_clase'); ?></p>
+                                </li>
+                        <?php
+                            endwhile;
+                        endif;
+                        ?>
+                    </ul>
+            <?php
+                endwhile;
+            endif;
+            ?>
+        </div>
     </section>
-    <section id="who" class="course-section">
+    <aside class="faqs">
+        <ul class="aside-btn">
+            <li data-tab="buy" class="buy">COMPRAR CURSO</li>
+        </ul>
+        <h4>PREGUNTAS FRECUENTES</h4>
+        <ul>
+            <li><strong>¿Cómo hago para comprar el curso</strong>
+                Podés abonar el curso de manera online a través de los distintos medios de pago que podés ver haciendo click aquí.</li>
 
-    </section>
-    <section id="buy" class="course-section">
+            <li><strong>¿Cuál es la modalidad del curso</strong>
+                El curso se dicta en modadlidad online.</li>
 
-    </section>
+            <li><strong>¿Cómo accedo al curso</strong>
+                Una vez que realices la compra del curso y se ejectue el pago, podrás acceder mediante la página de acceso (login) con tu usuario y contraseña generados.
+
+            <li><strong>¿Cómo hago para comprar el curso</strong>
+                Podés abonar el curso de manera online a través de los distintos medios de pago que podés ver haciendo click aquí.</li>
+
+            <li><strong>¿Cuál es la modalidad del curso</strong>
+                El curso se dicta en modadlidad online.</li>
+
+            <li><strong>¿Cómo accedo al curso</strong>
+                Una vez que realices la compra del curso y se ejectue el pago, podrás acceder mediante la página de acceso (login) con tu usuario y contraseña generados.
+
+            </li>
+        </ul>
+    </aside>
 </section>
-<aside class="faqs">
 
-</aside>
+<section id="who" class="course-section">
+    <h2>Participantes</h2>
+    <ul class="participants">
+        <?php
+        if (have_rows('participantes')) :
+            while (have_rows('participantes')) : the_row();
+                $foto = get_sub_field('foto');
+        ?>
+                <li class="part">
+                    <div class="participant-pic"><img src="<?= $foto['url']; ?>" alt="<?php the_sub_field('nombre'); ?>" /></div>
+                    <h3><?php the_sub_field('nombre'); ?></h3>
+                    <p><?php the_sub_field('bio'); ?></p>
+                </li>
+        <?php
+            endwhile;
+        endif;
+        ?>
+    </ul>
+</section>

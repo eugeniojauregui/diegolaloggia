@@ -54,7 +54,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
 
-html {
+ html {
     line-height: 1.15;
     /* 1 */
     -webkit-text-size-adjust: 100%;
@@ -1625,7 +1625,9 @@ p.name {
     top: 0;
     left: 0;
 }
-
+.entry-header h1.entry-title {
+    color:#fff!important;
+}
 h1.entry-title {
     font-size: 52px;
     font-weight: 400;
@@ -1636,6 +1638,8 @@ h1.entry-title {
     color: #fff;
     position: relative;
     z-index: 1;
+    color: #333;
+    font-family: 'Heroic', sans-serif;
 }
 
 .color-blocks {
