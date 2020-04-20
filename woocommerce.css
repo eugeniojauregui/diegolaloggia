@@ -493,9 +493,18 @@ p.no-comments {
 .woocommerce-info,
 .woocommerce-noreviews,
 p.no-comments {
-    background-color: #3D9CD2;
+    background-color: #2d202b;
+    color: #fff;
+    padding: 6px;
+    width: 100%;
+    text-align: center;
 }
-
+.woocommerce-checkout-payment ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width:100%;
+}
 .woocommerce-error {
     background-color: #e2401c;
 }
@@ -634,6 +643,9 @@ nav.tabs {
     color: #ade500;
     font-size: 14px;
     text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 9999;
 }
 
 nav.tabs ul {
@@ -831,10 +843,11 @@ section#buy {
 #buy .entry-summary {
     width: 58% !important;
 }
-
+#buy .entry-summary h2 {text-align:left;margin-bottom: 0;}
 p.price {
     font-weight: 700;
     font-size: 22px;
+    margin-bottom: 0;
 }
 
 .quantity {
@@ -888,4 +901,76 @@ aside.faqs ul li strong {
 }
 .course-section.active.flex {
     display: flex!important;
+}
+.payments {
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.payments ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.payments ul li {
+    min-width: 22%;
+    mix-blend-mode: multiply;
+}
+p#billing_address_2_field {
+    margin-right: 0px;
+}
+
+.woocommerce-billing-fields p {
+    width: 49% !important;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+}
+
+.woocommerce-billing-fields__field-wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+p#billing_country_field {
+    width: 100% !important;
+}
+
+.woocommerce-billing-fields p label,
+.woocommerce-billing-fields p span {
+    width: 100%;
+}
+.woocommerce-checkout .content-area {
+    max-width: 1600px;
+    width: 100%;
+    margin: auto;
+    padding-bottom: 50px;
+}
+.woocommerce-checkout .content-area .entry-content {
+    width: 80%;
+    margin: auto;
+    max-width: 1600px;
+}
+.woocommerce-checkout  .entry-header, .woocommerce-checkout .entry-header:after {
+    background-color: #fff!important;
+}
+.woocommerce-checkout  .entry-header h1 {
+    color: #2d202b!important;
+}
+
+.wpmc-tabs-wrapper .wpmc-tab-item.current .wpmc-tab-number {
+    border-color: #ade500 !important;
+}
+
+.wpmc-tabs-wrapper .wpmc-tab-item.current::before {
+    border-bottom-color: #ade500 !important;
 }

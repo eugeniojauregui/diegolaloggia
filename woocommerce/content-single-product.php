@@ -78,7 +78,7 @@ if (post_password_required()) {
             <li data-tab="buy" class="buy">COMPRAR CURSO</li>
             <li data-tab="about">VER TEMARIO</li>
             <li data-tab="who" class="hide">VER PARTICIPANTES</li>
-            <li data-tab="others" class="hide">VER OTROS CURSOS</li>
+            <li data-tab="others" class="hide"><a href="<?php echo esc_url(home_url('/')); ?>#Courses">VER OTROS CURSOS</a></li>
         </ul>
     </section>
 </div>
@@ -100,6 +100,7 @@ if (post_password_required()) {
                     $('#'+data).css('width', '100%');
                 } else {
                     $('.main-section').show();
+                    $('.faqs').show();
                 }
                 if (data === 'buy') {
                     $('.main-section').hide();

@@ -576,12 +576,12 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"] {
     border: 1px solid;
-    border-color: #ccc #ccc #bbb;
-    border-radius: 3px;
-    background: #e6e6e6;
+    border-color: #2d202b #2d202b #2d202b;
+    border-radius: 0;
+    background: #ade500;
     color: rgba(0, 0, 0, 0.8);
     font-size: 12px;
-    font-size: 0.75rem;
+    font-size: 1rem;
     line-height: 1;
     padding: .6em 1em .4em;
 }
@@ -624,6 +624,7 @@ textarea {
     border: 1px solid #ccc;
     border-radius: 3px;
     padding: 3px;
+    width: 100%;
 }
 
 input[type="text"]:focus,
@@ -1649,6 +1650,7 @@ h1.entry-title {
 .color-blocks img {
     max-height: 100px;
     min-height: 100px;
+    width: 100%;
 }
 
 .green-back {

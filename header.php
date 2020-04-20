@@ -46,11 +46,19 @@
 			<nav id="site-navigation" class="main-navigation">
 				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e('Primary Menu', 'dll'); ?></button>
 				<?php
-				wp_nav_menu(array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				));
+				if (is_front_page()) {
+					wp_nav_menu(array(
+						'theme_location' => 'menu-1',
+						'menu_id'        => 'primary-menu',
+					));
+				} else {
+					wp_nav_menu(array(
+						'theme_location' => 'inner',
+						'menu_id' => 'primary-menu',
+					));
+				}
 				?>
+				<?php ?>
 			</nav><!-- #site-navigation -->
 		</header><!-- #masthead -->
 

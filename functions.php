@@ -232,5 +232,28 @@ add_action('woocommerce_single_product_summary', 'woocommerce_template_single_ti
 function woocommerce_products_payments()
 {
 	get_template_part('template-parts/woo/product', 'payments');
+
 }
-add_action('woocommerce_before_add_to_cart_button', 'woocommerce_template_single_title_custom', 5);
+add_action('woocommerce_before_add_to_cart_button', 'woocommerce_products_payments', 5);
+
+function woocommerce_products_intro()
+{
+	echo 'Un curso de Diego La Loggia <br/>';
+	the_field('docentes');
+
+}
+add_action('woocommerce_single_product_summary', 'woocommerce_products_intro', 5);
+
+/**
+ * Remove related products output
+ */
+remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
+
+/**
+ * Inner menu
+ */
+function register_my_menu() {
+    register_nav_menu('inner', __('Inner Menu'));
+}
+
+add_action('init', 'register_my_menu');

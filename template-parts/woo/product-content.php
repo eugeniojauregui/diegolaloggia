@@ -71,9 +71,6 @@
         </div>
     </section>
     <aside class="faqs">
-        <ul class="aside-btn">
-            <li data-tab="buy" class="buy">COMPRAR CURSO</li>
-        </ul>
         <h4>PREGUNTAS FRECUENTES</h4>
         <ul>
             <li><strong>¿Cómo hago para comprar el curso</strong>
