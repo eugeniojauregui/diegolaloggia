@@ -42,7 +42,20 @@
 				endif;
 				?>
 			</div><!-- .site-branding -->
-
+			<div class="users">
+				<?php $current_user = wp_get_current_user(); ?>
+				<?php if (is_user_logged_in()) { ?>
+					<div class="user-name"><?php echo 'Bienvenid@ ' . $current_user->user_firstname; ?> </div> |
+					<a href="<?php echo esc_url(home_url('/')); ?>my-courses">
+						<div>Mis cursos</div>
+					</a> |
+					<a href="<?php echo wp_logout_url(home_url()); ?>">
+						<div>Cerrar sesión</div>
+					</a>
+				<?php } else { ?>
+					<div class="user-name"><a href="<?php echo esc_url(home_url('/')); ?>my-account">INGRESAR <img src="<?php bloginfo('template_directory'); ?>/img/icon-enter.svg" alt="Ingresar" /></a></div>
+				<?php } ?>
+			</div>
 			<nav id="site-navigation" class="main-navigation">
 				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e('Primary Menu', 'dll'); ?></button>
 				<?php

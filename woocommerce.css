@@ -35,7 +35,16 @@ table.shop_table_responsive tr td:before {
 }
 
 table.shop_table_responsive tr td.product-remove a {
-    text-align: left;
+    text-align: center;
+    background: red;
+    display: block;
+    height: 100%;
+    min-height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 22px;
 }
 
 table.shop_table_responsive tr td.product-remove:before {
@@ -55,6 +64,7 @@ table.shop_table_responsive tr td.download-actions .button {
 @media screen and (min-width: 48em) {
     table.shop_table_responsive thead {
         display: table-header-group;
+        background: #ade500;
     }
 
     table.shop_table_responsive tbody th {
@@ -488,6 +498,11 @@ p.no-comments {
     table-layout: fixed;
     background-color: #0f834d;
     clear: both;
+    width: 100%;
+    margin: 0;
+    color: #fff;
+    font-size: 14px;
+    padding: 10px;
 }
 
 .woocommerce-info,
@@ -499,12 +514,16 @@ p.no-comments {
     width: 100%;
     text-align: center;
 }
+
 .woocommerce-checkout-payment ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    width:100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 }
+
 .woocommerce-error {
     background-color: #e2401c;
 }
@@ -621,7 +640,7 @@ p.no-comments {
 nav.woocommerce-breadcrumb {
     background: #ade500;
     height: 30px;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     padding: 10px;
@@ -702,7 +721,7 @@ aside.faqs {
     padding: 50px;
 }
 
-.green-back.center.heroic.pad0 h3{
+.green-back.center.heroic.pad0 h3, .black-back.center.heroic.pad0 h3 {
     margin: 0;
     height: 28px;
     line-height: 30px;
@@ -712,7 +731,7 @@ aside.faqs {
 
 .course-video {
     width: 100%;
-    background: #000000;
+    background: #fff;
     text-align: center;
 }
 
@@ -799,7 +818,8 @@ section.lower-btns {
     width: 100%;
 }
 
-section.lower-btns ul, .aside-btn {
+section.lower-btns ul,
+.aside-btn {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -808,7 +828,8 @@ section.lower-btns ul, .aside-btn {
     align-items: center;
 }
 
-section.lower-btns ul li, .aside-btn li {
+section.lower-btns ul li,
+.aside-btn li {
     margin: 0 50px;
     padding: 8px 16px;
     background: #ade500;
@@ -817,17 +838,20 @@ section.lower-btns ul li, .aside-btn li {
     font-size: 14px;
 }
 
-section.lower-btns ul li:hover, .aside-btn li:hover {
+section.lower-btns ul li:hover,
+.aside-btn li:hover {
     transform: translate(0px, -5px);
 }
 
-section.lower-btns ul li.buy, .aside-btn .buy {
+section.lower-btns ul li.buy,
+.faqs .buy {
     background: #2d202b;
     color: #fff;
     border-radius: 50px;
     font-weight: 700;
     min-width: 200px;
     text-align: center;
+    cursor: pointer;
 }
 
 section#buy {
@@ -843,7 +867,12 @@ section#buy {
 #buy .entry-summary {
     width: 58% !important;
 }
-#buy .entry-summary h2 {text-align:left;margin-bottom: 0;}
+
+#buy .entry-summary h2 {
+    text-align: left;
+    margin-bottom: 0;
+}
+
 p.price {
     font-weight: 700;
     font-size: 22px;
@@ -869,22 +898,25 @@ p.price {
 .product_meta {
     display: none;
 }
+
 .course-section {
-    display: none!important;
+    display: none !important;
     width: 80%;
     margin-right: -5px;
 }
 
 .course-section.active {
-    display: inline-block!important;
+    display: inline-block !important;
 }
+
 aside h4 {
     font-family: 'Heroic', sans-serif;
-    font-size: 30px;
-    font-weight:400;
+    font-size: xx-large;
+    font-weight: 400;
     text-align: center;
     margin: 10px 0;
 }
+
 aside.faqs ul {
     list-style: none;
     padding: 0;
@@ -893,15 +925,18 @@ aside.faqs ul {
 
 aside.faqs ul li {
     margin-bottom: 25px;
-    font-size: 13px;
+    font-size: 15px;
 }
 
 aside.faqs ul li strong {
     display: block;
+    font-weight: 700;
 }
+
 .course-section.active.flex {
-    display: flex!important;
+    display: flex !important;
 }
+
 .payments {
     flex-wrap: wrap;
     display: flex;
@@ -924,6 +959,7 @@ aside.faqs ul li strong {
     min-width: 22%;
     mix-blend-mode: multiply;
 }
+
 p#billing_address_2_field {
     margin-right: 0px;
 }
@@ -949,22 +985,28 @@ p#billing_country_field {
 .woocommerce-billing-fields p span {
     width: 100%;
 }
+
 .woocommerce-checkout .content-area {
     max-width: 1600px;
     width: 100%;
     margin: auto;
     padding-bottom: 50px;
 }
+
 .woocommerce-checkout .content-area .entry-content {
     width: 80%;
     margin: auto;
     max-width: 1600px;
 }
-.woocommerce-checkout  .entry-header, .woocommerce-checkout .entry-header:after {
-    background-color: #fff!important;
+
+.woocommerce-checkout .entry-header,
+.woocommerce-checkout .entry-header:after {
+    background-color: #ade500 !important;
+    color: #fff!important;
 }
-.woocommerce-checkout  .entry-header h1 {
-    color: #2d202b!important;
+
+.woocommerce-checkout .entry-header h1 {
+    color: #2d202b !important;
 }
 
 .wpmc-tabs-wrapper .wpmc-tab-item.current .wpmc-tab-number {
@@ -973,4 +1015,405 @@ p#billing_country_field {
 
 .wpmc-tabs-wrapper .wpmc-tab-item.current::before {
     border-bottom-color: #ade500 !important;
+}
+
+.icon-modulo {
+    max-height: 75px;
+}
+
+.icon-modulo img {
+    height: 75px;
+}
+
+h2.space-up {
+    padding-top: 50px;
+    display: none;
+}
+
+form.woocommerce-cart-form {
+    width: 90%;
+    margin: auto;
+}
+
+td.product-thumbnail {
+    height: 150px !important;
+    display: inline-block !important;
+}
+
+td.product-thumbnail img {
+    max-height: 150px;
+    width: auto;
+}
+
+tr.woocommerce-cart-form__cart-item.cart_item {
+    background: #ececec;
+    border-bottom: 4px solid #fff;
+}
+
+.coupon {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 0;
+}
+
+.coupon label {
+    min-width: 75px;
+}
+
+.coupon .button {
+    min-width: 150px;
+    margin-left: 10px !important;
+}
+
+.cart-collaterals {
+    max-width: 90%;
+    margin: auto;
+    margin-bottom: 50px;
+}
+
+table.shop_table.shop_table_responsive {}
+
+.cart-collaterals table {
+    max-width: 40%;
+    margin: auto;
+    background: #ececec;
+    padding: 25px;
+}
+
+.cart-collaterals table td span {
+    text-align: right;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.wc-proceed-to-checkout {
+    width: 40%;
+    margin: auto;
+    text-align: center;
+    background: #2d202b;
+    color: #fff;
+    padding: 10px 0;
+}
+
+.actions .button {
+    margin: auto;
+    float: none;
+    border: none;
+    display: block;
+}
+
+.wpmc-steps-wrapper {
+    border-top: 4px solid #ade500;
+}
+
+.woocommerce_checkout_coupon {
+    background: #ade500;
+}
+
+form.checkout_coupon.woocommerce-form-coupon {
+    padding: 5px;
+    text-align: center;
+}
+
+form.checkout_coupon.woocommerce-form-coupon .button {
+    color: #fff;
+    background: #2d202b;
+    margin: auto;
+    display: block;
+}
+
+tr.cart_item {
+    background: #eee;
+}
+
+td.product-name {
+    text-align: center;
+}
+
+td.product-total {
+    text-align: center;
+}
+
+tr.cart-subtotal td,
+.order-total td {
+    text-align: center;
+}
+
+.woocommerce-form-coupon-toggle {
+    font-weight: 700;
+    font-size: 22px;
+}
+
+.woocommerce-form-coupon-toggle a {
+    font-weight: 400;
+    display: block;
+    font-size: 16px;
+}
+
+.woocommerce-form-coupon-toggle .woocommerce-info {
+    background: #ade500;
+    color: #2d202b;
+}
+
+h3#payment_heading {
+    text-align: center;
+}
+
+div#payment {
+    text-align: center;
+}
+
+li.wc_payment_method.payment_method_bacs label {
+    font-weight: 700;
+    height: 40px;
+    line-height: 40px;
+}
+
+button#place_order {
+    background: #2d202b;
+    color: #fff;
+    font-weight: 700;
+}
+
+.users {
+    position: absolute;
+    color: #ade500;
+    font-size: 14px;
+    top: 25px;
+    right: 2.5%;
+    text-align: right;
+}
+
+.user-name {
+    font-weight: 700;
+}
+
+.user-name img {
+    height: 18px;
+    vertical-align: sub;
+}
+
+.login {
+    width: 30%;
+    margin: auto;
+    text-align: center;
+}
+
+.user-active {
+    background: #ade500;
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    transition: ease all 0.3s;
+    height: auto;
+    overflow: hidden;
+    transform: scale(1, 0);
+}
+
+.user-active ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    padding: 12px;
+}
+
+.user-active ul li {
+    border-bottom: 1px solid;
+    height: 30px;
+    line-height: 30px;
+}
+
+.users:hover .user-active {
+    height: auto;
+    transform: scaleX(1);
+}
+
+p.my-messages-link-container {
+    display: none;
+}
+
+section#sensei-user-courses {
+    max-width: 96%;
+    margin: auto;
+}
+
+#user-course-status-toggle a.active {
+    background: #eee;
+    border-bottom: 1px solid #eee;
+}
+
+section#user-course-status-toggle {
+    margin: 0;
+}
+
+.columns-1 li.course {
+    overflow: visible;
+    transform: none;
+    color: #333;
+}
+
+.columns-1 li.course:nth-child(odd) {
+    background: #eee;
+}
+
+.columns-1 li.course:nth-child(even) {
+    background: #fff;
+}
+
+#user-course-status-toggle a {
+    color: #ade500;
+}
+
+.meter.orange>span {
+    background: #ade500;
+}
+
+span.course-author {
+    display: none;
+}
+
+h3.course-title {
+    font-family: 'Heroic', sans-serif;
+    font-size: 42px;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+section.course-content img {
+    max-width: 175px;
+}
+
+.woocommerce-checkout .woocommerce-notices-wrapper {
+    display: none;
+}
+
+.wpmc-tabs-wrapper:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 120px;
+    background: #eee;
+    left: 0;
+    top: -60px;
+}
+.woocommerce-order {
+    text-align: center;
+}
+
+.woocommerce-order ul {
+    list-style: none;
+    background: transparent;
+    padding: 0;
+    margin: 0;
+}
+
+.woocommerce-order strong {
+    font-weight: 700;
+}
+
+table.woocommerce-table.woocommerce-table--order-details.shop_table.order_details {
+    background: #ade500;
+}
+
+.woocommerce-order h2 {
+    background: #eee;
+}.woocommerce nav.woocommerce-MyAccount-navigation {
+    width: 23%;
+    display: inline-block;
+    margin-right: 1.5%;
+}
+
+.woocommerce-MyAccount-content {
+    width: 70%;
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+}
+
+li.woocommerce-MyAccount-navigation-link.woocommerce-MyAccount-navigation-link--downloads {
+    display: none;
+}
+
+li.woocommerce-MyAccount-navigation-link.woocommerce-MyAccount-navigation-link--dashboard {
+    display: none;
+}
+
+nav.woocommerce-MyAccount-navigation ul {
+    list-style: none;
+}
+
+nav.woocommerce-MyAccount-navigation ul li {
+    background: #2d202b;
+    margin-bottom: 6px;
+    color: #fff;
+    font-size: 16px;
+    padding: 0 6px;
+}
+
+.woocommerce {
+    min-height: 300px;
+}
+
+a.woocommerce-button.button.view {
+    background: #2d202b;
+    padding: 4px 8px;
+    margin: auto;
+    display: block;
+    max-width: 100px;
+    text-align: center;
+    color: #fff;
+    font-size: 14px;
+}
+.woocommerce-checkout-payment ul li {
+    border-bottom: 1px solid #2d202b;
+    padding-bottom: 1px;
+    color: #2d202b;
+    margin: 10px;
+    width: 30%;
+    height: auto;
+}
+
+.payment_box {
+    background: white;
+    color: #2d202b;
+    padding: 12px;
+}
+
+.woocommerce-checkout-payment ul li label {
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background: #ade500;
+    height: 40px;
+}
+
+.woocommerce-checkout-payment ul li.payment_method_paypal a {
+    display: none;
+}
+
+.woocommerce-checkout-payment ul li.payment_method_paypal img {
+    margin-left: 10px;
+}
+span.icon-ig img {
+    width: 25px;
+    vertical-align: bottom;
+}
+.info-color-blocks {
+    display: flex;
+    justify-content: center;
+    align-items: normal;
+    
+}
+.woocommerce-notices-wrapper a {
+    background: #2d202b;
+    padding: 6px 16px;
+}
+span.woocommerce-terms-and-conditions-checkbox-text a {
+    font-weight: 700;
+    text-decoration: underline;
 }

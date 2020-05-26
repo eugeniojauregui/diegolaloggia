@@ -1,0 +1,639 @@
+.green-label {
+    background: #ade500;
+    width: fit-content;
+    margin: auto;
+    padding: 3px 12px;
+}
+
+.lesson .video {
+    width: 100%;
+    min-height: 100vh;
+    background: #fff;
+}
+
+header.lesson-title h1 {
+    font-family: 'Heroic', sans-serif;
+    font-weight: 300;
+    text-align: center;
+    width: 100%;
+    font-size: 52px;
+    text-transform: uppercase;
+    padding: 25px 0;
+}
+
+.lesson .p {
+    padding: 0 100px;
+}
+
+.lesson p {
+    padding: 0 15%;
+}
+
+.single-lesson .lesson_button_form {
+    width: 100%;
+    text-align: center;
+    display: block;
+}
+
+.lesson input.quiz-submit.complete,
+.quiz input.quiz-submit.complete {
+    background: #ade500;
+    width: 100%;
+    font-size: 18px;
+    border-radius: 0;
+    max-width: 250px;
+    position: relative;
+    display: block;
+    margin: auto;
+}
+
+.lesson input.quiz-submit.complete:before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: #eeeeee;
+    position: absolute;
+    top: 10px;
+    display: block;
+    min-height: 40px;
+    z-index: -1;
+    left: 10px;
+}
+
+.linedup {
+    max-width: 50%;
+    margin: auto;
+}
+
+.linedup li {
+    padding: 16px;
+    /* border-bottom: 1px solid #999; */
+}
+
+h3.lighter {
+    font-weight: 300;
+    font-size: 32px;
+    max-width: 50%;
+    margin: auto;
+    padding: 25px 0;
+    line-height: 36px;
+    text-transform: inherit;
+}
+
+section.sensei-breadcrumb {
+    padding: 0;
+    background: #2d202b;
+    color: #fff;
+    margin: 0;
+    padding: 16px;
+}
+
+.single.logged-in #main .type-course header h1 {
+    font-family: 'Heroic', sans-serif;
+    font-size: 100px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 300;
+    margin: 0;
+    margin-bottom: 0;
+}
+
+.progress {
+    text-align: center;
+    width: 100%;
+    display: block;
+}
+
+.meter {
+    max-width: 75%;
+    margin: auto;
+}
+
+.course .course-meta,
+.course .course-video {
+    position: relative;
+}
+
+.course .course-meta .status {
+    float: none;
+    position: absolute;
+    right: 0;
+    top: -340px;
+    border-radius: 0;
+    background: #ade500;
+}
+
+.course p {
+    padding: 0 200px;
+    text-align: center;
+}
+.wp-block-column p {
+    padding: 0 100px;
+}
+.course header h1 {display:none}
+.course .entry-header {
+    /* display: none; */
+    height: 300px;
+    font-size: 52px;
+    text-align: center;
+    align-items: center;
+    background: rgb(45, 32, 43);
+}
+.course .entry-header:after {
+    background: rgba(45, 32, 43, 0.36);
+}
+.course .entry-header h1 {display:block}
+.course-lessons article header h2 {
+    background: #2d202b;
+    color: #fff;
+}
+
+.course-lessons article:nth-child(even) header h2 {
+    background: #ade500;
+    color: #2d202b;
+}
+
+nav#post-entries {
+    /* display: none; */
+}
+
+.course .course-lessons .lesson p.lesson-meta {
+    background: #eee;
+    padding: 10px;
+    text-align: center;
+    font-style: normal;
+    margin: 0;
+}
+
+span.lesson-author {
+    display: none;
+}
+
+.lesson header.lesson-title h2:before,
+.module-lessons header.lesson-title h2 :before {
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 20px solid #ade500;
+    content: '';
+    margin: auto;
+    display: block;
+    margin-top: 25px;
+}
+
+.course-lessons article:nth-child(even) header.lesson-title h2:before,
+.module-lessons header.lesson-title h2 :before {
+    border-top: 20px solid #2d202b;
+}
+
+.gray-back {
+    background: #eee;
+    padding: 50px;
+}
+
+.wp-block-table {
+    max-width: 100%;
+    margin: auto;
+    padding: 0 15%;
+    margin-bottom: 50px;
+}
+
+.wp-block-table tr:first-child {
+    background: #ade500 !important;
+}
+
+.wp-block-table tr td {
+    padding: 6px;
+}
+
+.wp-block-table tr:nth-child(odd) {
+    background: #eee;
+}
+
+.wp-block-table table {
+    border-bottom: 2px solid #333;
+    border-collapse: collapse;
+    margin: 0;
+}
+
+.wp-block-quote {
+    background: #ffffc1;
+    border-left: 2px solid #333;
+    max-width: 70%;
+    margin: auto;
+    padding: 5px;
+    padding-left: 25px;
+}
+
+.wp-block-quote p {
+    padding: 0;
+    font-style: italic;
+    margin: 0;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.wp-block-quote cite {
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.wp-block-table tr td:nth-child(even) {
+    color: #b00a0a;
+}
+.wp-block-table.no-red tr td:nth-child(even) {
+    color: inherit;
+}
+
+.wp-block-table figcaption {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+    background: #333;
+    color: #fff;
+}
+
+.sensei-message.info {
+    max-width: 75%;
+    margin: auto !important;
+    display: block;
+    float: none;
+    clear: none;
+    text-align: center;
+}
+
+.lesson header.lesson-title,
+.module-lessons header.lesson-title {
+    margin: 0;
+}
+
+.sensei-help .container {
+    padding: 50px;
+    text-align: center;
+}
+
+.sensei-help .container img {
+    max-width: 200px;
+    transition: ease all 0.3s;
+}
+
+.sensei-help .container img:hover {
+    transform: scale(1.1);
+}
+
+.lesson-template-default .site-footer,
+.single-course .site-footer {
+    background: #eee;
+}
+
+.lesson-template-default .site-footer .social,
+.single-course .site-footer .social {
+    border: none;
+}
+
+.lesson header.lesson-title a {
+    display: block;
+    width: 100%;
+}
+
+.course .module .module-lessons ul li {
+    background: #2d202b9c;
+    color: #fff;
+    text-align: center;
+    height: 100px;
+}
+
+.course .module .module-lessons ul li:nth-child(even) {
+    background: #ade500;
+    color: #2d202b;
+}
+
+.course .module .module-lessons ul li a {
+    color: inherit !important;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Heroic', sans-serif;
+    font-size: 40px;
+    font-weight: 300;
+    text-transform: uppercase;
+    padding: 0;
+    min-height: 100px;
+    padding-top: 20px;
+}
+
+.course .module .module-lessons ul li a:before {
+    right: 20px;
+    left: auto;
+    color: #ffffff94;
+    font-size: 100%;
+}
+
+.course .module .module-lessons ul li a:after {
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 20px solid #ade500;
+    content: '';
+    margin: auto;
+    display: block;
+    margin-top: 25px;
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.course .module .module-lessons ul li:nth-child(even) a:after {
+    border-top: 20px solid #2c202a;
+}
+
+.course .module .module-lessons ul li a:hover {
+    background: #ffffff4d;
+    position: relative;
+}
+
+.course .module .module-lessons header {
+    display: none;
+}
+
+.course .module header h2 {
+    font-size: 56px;
+}
+
+.course .module header .status {
+    position: absolute;
+    right: 0px;
+    background: #abe200;
+    border-radius: 0;
+    top: 0;
+}
+
+.course .module header {
+    position: relative;
+}
+
+.lesson ol {
+    max-width: 50%;
+    margin: auto;
+    padding-left: 45px;
+    list-style: none;
+    padding: 0;
+    counter-reset: my-awesome-counter;
+}
+
+.lesson ol li {
+    background: #eeeeee;
+    margin-bottom: 6px;
+    padding: 6px;
+    position: relative;
+    min-height: 40px;
+    counter-increment: my-awesome-counter;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.lesson ol li:before {
+    content: counter(my-awesome-counter);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    position: absolute;
+    left: -45px;
+    z-index: -1;
+    background: #ade500;
+    top: 0;
+    font-weight: 700;
+    justify-content: center;
+    align-items: center;
+}
+
+.green-back-pad {
+    background-color: #abe200;
+    padding: 50px 300px !important;
+    margin-bottom: 50px;
+}
+
+.nav-next,
+.nav-prev {
+    width: auto !important;
+    padding: 0;
+    background: #ade500;
+    min-width: fit-content;
+    margin: 25px;
+    position: relative;
+}
+
+.nav-prev:before,
+.nav-next:before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: #eeeeee;
+    position: absolute;
+    top: 10px;
+    display: block;
+    min-height: 40px;
+    z-index: -1;
+    left: 10px;
+}
+
+.nav-next:before {
+    right: 10px;
+    left: unset
+}
+
+.nav-next a,
+.nav-prev a {
+    padding: 10px;
+    display: block
+}
+
+.nav-next {
+    text-align: right;
+}
+
+.module.full-body .lessons-list,
+.module.bloque-terico-unidad-1 .lessons-list,
+.module.bloque-terico-unidad-2 .lessons-list,
+.module.bloque-terico-unidad-3 .lessons-list,
+.module.bloque-terico-unidad-4 .lessons-list,
+.module.bloque-terico-unidad-5 .lessons-list {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.module.rutinas-especiales .lessons-list,
+.module.bloque-prctico .lessons-list {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.course .module.full-body .module-lessons .lessons-list li,
+.course .module.bloque-terico-unidad-1 .module-lessons .lessons-list li,
+.course .module.bloque-terico-unidad-2 .module-lessons .lessons-list li,
+.course .module.bloque-terico-unidad-3 .module-lessons .lessons-list li,
+.course .module.bloque-terico-unidad-4 .module-lessons .lessons-list li,
+.course .module.bloque-terico-unidad-5 .module-lessons .lessons-list li {
+    width: 200px;
+    height: 200px;
+    margin: 25px !important;
+    border-radius: 300px;
+    overflow: hidden;
+    line-height: 25px;
+    background-color: #2d202b9c;
+    color: #fff;
+}
+
+.course .module.rutinas-especiales .module-lessons .lessons-list li,
+.course .module.bloque-prctico .module-lessons .lessons-list li {
+    width: 200px;
+    height: 200px;
+    margin: 25px !important;
+    border-radius: 300px;
+    /* overflow: hidden; */
+    line-height: 25px;
+    background-color: transparent;
+    color: #fff;
+    margin-bottom: 50px !important;
+}
+
+.course .module.full-body .module-lessons .lessons-list li a,
+.course .module.bloque-terico-unidad-1 .module-lessons .lessons-list li a,
+.course .module.bloque-terico-unidad-2 .module-lessons .lessons-list li a,
+.course .module.bloque-terico-unidad-3 .module-lessons .lessons-list li a,
+.course .module.bloque-terico-unidad-4 .module-lessons .lessons-list li a,
+.course .module.bloque-terico-unidad-5 .module-lessons .lessons-list li a {
+    font-size: 28px;
+    position: relative;
+    padding: 40px;
+}
+
+.course .module.rutinas-especiales .module-lessons .lessons-list li a,
+.course .module.bloque-prctico .module-lessons .lessons-list li a {
+    font-size: 28px;
+    position: relative;
+    padding: 40px;
+    border: none;
+    background: transparent;
+}
+
+.course .module.full-body .module-lessons .lessons-list li a img {
+    top: 0;
+    position: absolute;
+    z-index: -1;
+    min-height: 200px;
+    width: auto;
+    max-width: none;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 50%;
+}
+
+.course .module.rutinas-especiales .module-lessons .lessons-list li a img,
+.course .module.bloque-prctico .module-lessons .lessons-list li a img {
+    top: 0;
+    position: absolute;
+    z-index: -1;
+    overflow: hidden;
+    border-radius: 300px;
+}
+
+.course .module.full-body .module-lessons .lessons-list li a:before,
+.course .module.bloque-terico-unidad-1 .module-lessons .lessons-list li a:before,
+.course .module.bloque-terico-unidad-2 .module-lessons .lessons-list li a:before,
+.course .module.bloque-terico-unidad-3 .module-lessons .lessons-list li a:before,
+.course .module.bloque-terico-unidad-4 .module-lessons .lessons-list li a:before,
+.course .module.bloque-terico-unidad-5 .module-lessons .lessons-list li a:before {
+    bottom: 20px;
+    top: auto;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.course .module.rutinas-especiales .module-lessons .lessons-list li a:before,
+.course .module.bloque-prctico .module-lessons .lessons-list li a:before {
+    bottom: 20px;
+    top: auto;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.course .module.full-body .module-lessons .lessons-list li a:after {
+    content: none;
+}
+
+.course .module.rutinas-especiales .module-lessons .lessons-list li a:after,
+.course .module.bloque-prctico .module-lessons .lessons-list li a:after {
+    content: none;
+}
+
+p.module-description {
+    padding: 0 !important;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    text-align: center;
+    padding: 50px;
+    font-size: 16px;
+    min-height: 300px;
+}
+
+.full-body-info img {
+    max-width: 200px;
+    display: block;
+    margin: auto;
+}
+
+.full-body-info {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.course .module.rutinas-especiales .module-lessons .lessons-list li a .lesson-title,
+.course .module.bloque-prctico .module-lessons .lessons-list li a .lesson-title {
+    position: absolute;
+    bottom: -45px;
+    background: #333;
+    padding: 5px;
+    font-size: 18px;
+    width: 90%;
+    margin: auto;
+}
+
+.course .modules-title {
+    margin-top: 1em;
+    display: none;
+}
+
+.lesson .sensei-message a.next-lesson {
+    background: #ade500 !important;
+    font-size: 14px !important;
+    font-weight: 400 !important;
+    border-radius: 0px !important;
+    border-width: 1px !important;
+    color: #333 !important;
+}
+
+.sensei-message.tick {
+    max-width: 96%;
+    margin: auto !important;
+    border-radius: 0px !important;
+    margin-bottom: 25px!important;
+}
+.course .module.bloque-prctico .module-lessons ul {
+    padding: 0 10%!important;
+}

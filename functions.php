@@ -257,3 +257,45 @@ function register_my_menu() {
 }
 
 add_action('init', 'register_my_menu');
+
+add_filter( 'auto_update_plugin', '__return_false' );
+
+// add_filter( 'woocommerce_cart_item_quantity', 'wc_cart_item_quantity', 10, 3 );
+// function wc_cart_item_quantity( $product_quantity, $cart_item_key, $cart_item ){
+//     if( is_cart() ){
+//         $product_quantity = sprintf( '%2$s <input type="hidden" name="cart[%1$s][qty]" value="%2$s" />', $cart_item_key, $cart_item['quantity'] );
+//     }
+//     return $product_quantity;
+// }
+// function woocommerce_quantity_input_max_callback( $max, $product ) {
+// 	$max = 1;  
+// 	return $max;
+// }
+// add_filter( 'woocommerce_quantity_input_max', 'woocommerce_quantity_input_max_callback', 10, 2 );
+// function wc_qty_add_product_field() {
+
+// 	echo '<div class="options_group">';
+// 	woocommerce_wp_text_input( 
+// 		array( 
+// 			'id'          => '_wc_min_qty_product', 
+// 			'label'       => __( 'Minimum Quantity', 'woocommerce-max-quantity' ), 
+// 			'placeholder' => '',
+// 			'desc_tip'    => 'true',
+// 			'description' => __( 'Optional. Set a minimum quantity limit allowed per order. Enter a number, 1 or greater.', 'woocommerce-max-quantity' ) 
+// 		)
+// 	);
+// 	echo '</div>';
+
+// 	echo '<div class="options_group">';
+// 	woocommerce_wp_text_input( 
+// 		array( 
+// 			'id'          => '_wc_max_qty_product', 
+// 			'label'       => __( 'Maximum Quantity', 'woocommerce-max-quantity' ), 
+// 			'placeholder' => '',
+// 			'desc_tip'    => 'true',
+// 			'description' => __( 'Optional. Set a maximum quantity limit allowed per order. Enter a number, 1 or greater.', 'woocommerce-max-quantity' ) 
+// 		)
+// 	);
+// 	echo '</div>';	
+// }
+// add_action( 'woocommerce_product_options_inventory_product_data', 'wc_qty_add_product_field' );

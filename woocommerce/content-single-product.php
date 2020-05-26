@@ -32,8 +32,9 @@ if (post_password_required()) {
 ?>
 <div id="product-<?php the_ID(); ?>" <?php wc_product_class(); ?>>
     <?php get_template_part('template-parts/woo/product', 'content'); ?>
+    <h2 class="space-up">Comprar Curso</h2>
     <section id="buy" class="course-section">
-        <h2>Comprar Curso</h2>
+        
         <?php
         /**
          * Hook: woocommerce_before_single_product_summary.
@@ -84,29 +85,44 @@ if (post_password_required()) {
 </div>
 
 <?php do_action('woocommerce_after_single_product'); ?>
+<div class="wp-block-group green-back">
+    <div class="wp-block-group__inner-container">
+        <h2 class="has-text-align-center">¿TENÉS ALGUNA CONSULTA?</h2>
+
+
+
+        <p class="has-text-align-center"><strong>Contactanos:</strong></p>
+        <?php echo do_shortcode('[contact-form-7 id="121" title="Contact form Footer"]'); ?>
+    </div>
+</div>
 <script>
     (function($) {
         $(document).ready(function() {
-            $('.tabs ul li, .lower-btns ul li').on('click', function() {
+            $('.tabs ul li, .lower-btns ul li, .faqs .buy').on('click', function() {
                 var data = $(this).data('tab');
                 console.log(data);
                 $('.tabs ul li').removeClass('active');
                 $(this).addClass('active');
                 $('.course-section').removeClass('active');
                 $('#' + data).addClass('active');
+                $([document.documentElement, document.body]).animate({
+                    scrollTop: $('.main-section').offset().top
+                }, 1000);
                 if (data === 'who') {
                     $('.main-section').hide();
                     $('.faqs').hide();
-                    $('#'+data).css('width', '100%');
+                    $('#' + data).css('width', '100%');
                 } else {
                     $('.main-section').show();
                     $('.faqs').show();
                 }
                 if (data === 'buy') {
                     $('.main-section').hide();
-                    $('#'+data).addClass('flex');
+                    $('#' + data).addClass('flex');
+                    $('.space-up').show();
                 } else {
                     $('.main-section').show();
+                    $('.space-up').hide();
                 }
             })
         });

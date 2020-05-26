@@ -8,7 +8,7 @@
 <nav class="tabs">
     <ul>
         <li data-tab="what" class="active">¿QUÉ APRENDERÁS?</li>
-        <li data-tab="about">TEMARIO</li>
+        <li data-tab="about">PROGRAMA Y METODOLOGIA</li>
         <li data-tab="who">PARTICIPANTES</li>
         <li data-tab="buy">COMPRAR CURSO</li>
     </ul>
@@ -20,15 +20,21 @@
                 <?php the_field('descripcion'); ?>
             </div>
             <?php
-            if (have_rows('bloques_de_color')) :
-                while (have_rows('bloques_de_color')) : the_row();
-            ?>
-                    <div class="<?php the_sub_field('color_de_fondo'); ?> center pad50">
-                        <h3><?php the_sub_field('titulo'); ?></h3>
-                        <p><?php the_sub_field('texto'); ?></p>
-                    </div>
+            if (have_rows('bloques_de_color')) : ?>
+                <div class="info-color-blocks">
+                    <?php
+                    while (have_rows('bloques_de_color')) : the_row();
+                    ?>
+                        <div class="<?php the_sub_field('color_de_fondo'); ?> center pad50">
+                            <div class="icon-modulo"><img src="<?php the_sub_field('icono'); ?>" alt="Icon" /></div>
+                            <h3><?php the_sub_field('titulo'); ?></h3>
+                            <p><?php the_sub_field('texto'); ?></p>
+                        </div>
+                    <?php
+                    endwhile;
+                    ?>
+                </div>
             <?php
-                endwhile;
             endif;
             ?>
             <?php if (get_field('video')) : ?>
@@ -44,6 +50,9 @@
             if (have_rows('temario')) :
                 while (have_rows('temario')) : the_row();
             ?>
+                    <div class="black-back center heroic pad0">
+                        <h3>METODOLOGIA: <span class="green-text"><?php the_sub_field('metodologia'); ?></span></h3>
+                    </div>
                     <div class="green-back center heroic pad0">
                         <h3><?php the_sub_field('titulo_modulo'); ?></h3>
                     </div>
@@ -71,24 +80,25 @@
         </div>
     </section>
     <aside class="faqs">
+        <div data-tab="buy" class="buy">COMPRAR CURSO</div>
         <h4>PREGUNTAS FRECUENTES</h4>
         <ul>
-            <li><strong>¿Cómo hago para comprar el curso</strong>
+            <li><strong>¿Cómo hago para comprar el curso?</strong>
                 Podés abonar el curso de manera online a través de los distintos medios de pago que podés ver haciendo click aquí.</li>
 
-            <li><strong>¿Cuál es la modalidad del curso</strong>
+            <li><strong>¿Cuál es la modalidad del curso?</strong>
                 El curso se dicta en modadlidad online.</li>
 
-            <li><strong>¿Cómo accedo al curso</strong>
+            <li><strong>¿Cómo accedo al curso?</strong>
                 Una vez que realices la compra del curso y se ejectue el pago, podrás acceder mediante la página de acceso (login) con tu usuario y contraseña generados.
 
-            <li><strong>¿Cómo hago para comprar el curso</strong>
+            <li><strong>¿Cómo hago para comprar el curso?</strong>
                 Podés abonar el curso de manera online a través de los distintos medios de pago que podés ver haciendo click aquí.</li>
 
-            <li><strong>¿Cuál es la modalidad del curso</strong>
+            <li><strong>¿Cuál es la modalidad del curso?</strong>
                 El curso se dicta en modadlidad online.</li>
 
-            <li><strong>¿Cómo accedo al curso</strong>
+            <li><strong>¿Cómo accedo al curso?</strong>
                 Una vez que realices la compra del curso y se ejectue el pago, podrás acceder mediante la página de acceso (login) con tu usuario y contraseña generados.
 
             </li>
@@ -108,6 +118,9 @@
                     <div class="participant-pic"><img src="<?= $foto['url']; ?>" alt="<?php the_sub_field('nombre'); ?>" /></div>
                     <h3><?php the_sub_field('nombre'); ?></h3>
                     <p><?php the_sub_field('bio'); ?></p>
+                    <?php if (get_sub_field('instagram')) : ?>
+                        <p><a href="https://instagram.com/<?php the_sub_field('instagram'); ?>" target="_blank"><span class="icon-ig"><img src="https://ejdg.com.ar/dev/dlt/wp-content/themes/dll/img/icon-instagram.svg" alt="Instagram"></span> /<?php the_sub_field('instagram'); ?></a></p>
+                    <?php endif; ?>
                 </li>
         <?php
             endwhile;

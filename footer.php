@@ -13,7 +13,15 @@
 ?>
 
 </div><!-- #content -->
-
+<?php if (is_sensei()) { ?>
+	<section class="sensei-help">
+		<div class="container">
+			<a href="<?php echo esc_url(home_url('/contacto')); ?>" target="_blank">
+				<img src="<?php bloginfo('template_directory'); ?>/img/couse-contact.svg" alt="Contact" />
+			</a>
+		</div>
+	</section>
+<?php } ?>
 <footer id="colophon" class="site-footer">
 	<div class="social">
 		<ul>
@@ -39,6 +47,8 @@
 	</div>
 	<div class="site-info">
 		Copyright <?= date('Y') ?> © Diego La Loggia
+		<span class="sep"> | </span>
+		<a href="<?php echo esc_url(home_url('/politica-de-privacidad')); ?>">Política de Privacidad</a>
 		<span class="sep"> | </span>
 		Diseño y Desarrollo por <a href="https://www.graphicmo.com.ar">graphicmo </a>
 	</div><!-- .site-info -->

@@ -21,6 +21,10 @@ function wp_scripts_destinemos()
     if (wp_is_mobile()) {
     } else {
     }
+    if (is_sensei()) {
+        wp_enqueue_style( 'dll-sensei-style', get_template_directory_uri() . '/sensei.css' );
+    } else {
+    }
 
     // }
 
