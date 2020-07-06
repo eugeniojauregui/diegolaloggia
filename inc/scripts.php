@@ -1,6 +1,6 @@
 <?php
 
-function wp_scripts_destinemos()
+function wp_scripts_dll()
 {
     /** CSS * */
     wp_enqueue_style('proxima', get_template_directory_uri() . '/fonts/fonts.css');
@@ -30,4 +30,4 @@ function wp_scripts_destinemos()
     // }
 
 }
-add_action('wp_enqueue_scripts', 'wp_scripts_destinemos');
+add_action('wp_enqueue_scripts', 'wp_scripts_dll');
