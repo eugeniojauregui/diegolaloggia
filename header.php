@@ -49,6 +49,9 @@
 					<a href="<?php echo esc_url(home_url('/')); ?>my-courses">
 						<div>Mis cursos</div>
 					</a> |
+					<a href="<?php echo esc_url(home_url('/')); ?>my-account">
+						<div>Mi cuenta</div>
+					</a> |
 					<a href="<?php echo wp_logout_url(home_url()); ?>">
 						<div>Cerrar sesión</div>
 					</a>

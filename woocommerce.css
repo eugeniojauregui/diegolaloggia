@@ -15,7 +15,7 @@ WooCommerce styles override
 /**
  * Shop tables
  */
- table.shop_table_responsive thead {
+table.shop_table_responsive thead {
     display: none;
 }
 
@@ -721,7 +721,8 @@ aside.faqs {
     padding: 50px;
 }
 
-.green-back.center.heroic.pad0 h3, .black-back.center.heroic.pad0 h3 {
+.green-back.center.heroic.pad0 h3,
+.black-back.center.heroic.pad0 h3 {
     margin: 0;
     height: 28px;
     line-height: 30px;
@@ -1002,7 +1003,7 @@ p#billing_country_field {
 .woocommerce-checkout .entry-header,
 .woocommerce-checkout .entry-header:after {
     background-color: #ade500 !important;
-    color: #fff!important;
+    color: #fff !important;
 }
 
 .woocommerce-checkout .entry-header h1 {
@@ -1052,18 +1053,24 @@ tr.woocommerce-cart-form__cart-item.cart_item {
 
 .coupon {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 25px 0;
+    flex-wrap: wrap;
+    text-align: center;
 }
 
 .coupon label {
     min-width: 75px;
+    width: 100%;
 }
 
 .coupon .button {
-    min-width: 150px;
+    width: 150px;
     margin-left: 10px !important;
+    height: 36px;
+    border-radius: 4px;
+    font-weight: 700;
 }
 
 .cart-collaterals {
@@ -1115,11 +1122,26 @@ table.shop_table.shop_table_responsive {}
 form.checkout_coupon.woocommerce-form-coupon {
     padding: 5px;
     text-align: center;
+    display: block !important;
+}
+
+a.showcoupon {
+    display: none !important;
+}
+
+form.checkout_coupon.woocommerce-form-coupon input {
+    max-width: 500px;
+    text-align: center;
+}
+
+form.checkout_coupon.woocommerce-form-coupon p {
+    padding: 0;
+    margin: 10px;
 }
 
 form.checkout_coupon.woocommerce-form-coupon .button {
-    color: #fff;
-    background: #2d202b;
+    color: #2d202b;
+    background: #ffffff;
     margin: auto;
     display: block;
 }
@@ -1155,6 +1177,7 @@ tr.cart-subtotal td,
 .woocommerce-form-coupon-toggle .woocommerce-info {
     background: #ade500;
     color: #2d202b;
+    font-size: 24px;
 }
 
 h3#payment_heading {
@@ -1184,10 +1207,27 @@ button#place_order {
     top: 25px;
     right: 2.5%;
     text-align: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.users a {
+    display: block;
+    margin: 0 10px;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+.users a:last-child {
+    margin-right: 0;
 }
 
 .user-name {
     font-weight: 700;
+    margin-right: 10px;
 }
 
 .user-name img {
@@ -1196,7 +1236,7 @@ button#place_order {
 }
 
 .login {
-    width: 30%;
+    width: 100%;
     margin: auto;
     text-align: center;
 }
@@ -1299,6 +1339,7 @@ section.course-content img {
     left: 0;
     top: -60px;
 }
+
 .woocommerce-order {
     text-align: center;
 }
@@ -1320,10 +1361,13 @@ table.woocommerce-table.woocommerce-table--order-details.shop_table.order_detail
 
 .woocommerce-order h2 {
     background: #eee;
-}.woocommerce nav.woocommerce-MyAccount-navigation {
+}
+
+.woocommerce nav.woocommerce-MyAccount-navigation {
     width: 23%;
     display: inline-block;
     margin-right: 1.5%;
+    margin-top: 50px;
 }
 
 .woocommerce-MyAccount-content {
@@ -1331,6 +1375,8 @@ table.woocommerce-table.woocommerce-table--order-details.shop_table.order_detail
     display: inline-block;
     vertical-align: top;
     text-align: center;
+    margin-top: 50px;
+    text-align: left;
 }
 
 li.woocommerce-MyAccount-navigation-link.woocommerce-MyAccount-navigation-link--downloads {
@@ -1349,8 +1395,10 @@ nav.woocommerce-MyAccount-navigation ul li {
     background: #2d202b;
     margin-bottom: 6px;
     color: #fff;
-    font-size: 16px;
+    font-size: 18px;
     padding: 0 6px;
+    position: relative;
+    padding-left: 40px;
 }
 
 .woocommerce {
@@ -1367,6 +1415,7 @@ a.woocommerce-button.button.view {
     color: #fff;
     font-size: 14px;
 }
+
 .woocommerce-checkout-payment ul li {
     border-bottom: 1px solid #2d202b;
     padding-bottom: 1px;
@@ -1399,21 +1448,120 @@ a.woocommerce-button.button.view {
 .woocommerce-checkout-payment ul li.payment_method_paypal img {
     margin-left: 10px;
 }
+
 span.icon-ig img {
     width: 25px;
     vertical-align: bottom;
 }
+
 .info-color-blocks {
     display: flex;
     justify-content: center;
     align-items: normal;
-    
+
 }
+
 .woocommerce-notices-wrapper a {
     background: #2d202b;
     padding: 6px 16px;
 }
+
 span.woocommerce-terms-and-conditions-checkbox-text a {
     font-weight: 700;
     text-decoration: underline;
+}
+
+div#customer_login {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    font-size: 14px;
+    background: #eee;
+}
+
+.u-column1.col-1 {
+    width: 40%;
+    padding: 0 5%;
+    text-align: center;
+}
+
+.u-column2.col-2 {
+    width: 40%;
+    padding: 0 5%;
+    text-align: center;
+    border-left: 1px solid #eee;
+    margin-bottom: 25px;
+}
+
+form.woocommerce-ResetPassword.lost_reset_password {
+    max-width: 600px;
+    text-align: center;
+    margin: auto;
+}
+
+nav.woocommerce-MyAccount-navigation ul li:nth-child(1) a:before {
+    content: '\f19c';
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    background: #ade500;
+    display: inline-block;
+    width: 30px;
+    position: absolute;
+    left: 0;
+    text-align: center;
+    transform: scale(1.1);
+}
+
+nav.woocommerce-MyAccount-navigation ul li:nth-child(2) a:before {
+    content: '\f044';
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    background: #ade500;
+    display: inline-block;
+    width: 30px;
+    position: absolute;
+    left: 0;
+    text-align: center;
+    transform: scale(1.1);
+}
+
+nav.woocommerce-MyAccount-navigation ul li:nth-child(3) a:before {
+    content: '\f19d';
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    background: #ade500;
+    display: inline-block;
+    width: 30px;
+    position: absolute;
+    left: 0;
+    text-align: center;
+    transform: scale(1.1);
+}
+
+nav.woocommerce-MyAccount-navigation ul li:nth-child(4) a:before {
+    content: '\f2d4';
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    background: #ade500;
+    display: inline-block;
+    width: 30px;
+    position: absolute;
+    left: 0;
+    text-align: center;
+    transform: scale(1.1);
+}
+
+ul.woocommerce-order-overview.woocommerce-thankyou-order-details.order_details {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul.woocommerce-order-overview.woocommerce-thankyou-order-details.order_details li {
+    border-bottom: 1px solid #aaa;
 }

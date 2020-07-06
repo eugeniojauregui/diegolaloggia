@@ -200,15 +200,15 @@ function buy_now_submit_form()
 <?php
 }
 add_action('woocommerce_after_add_to_cart_form', 'buy_now_submit_form');
-add_filter('woocommerce_add_to_cart_redirect', 'redirect_to_checkout');
-function redirect_to_checkout($redirect_url)
-{
-	if (isset($_REQUEST['is_buy_now']) && $_REQUEST['is_buy_now']) {
-		global $woocommerce;
-		$redirect_url = wc_get_checkout_url();
-	}
-	return $redirect_url;
-}
+// add_filter('woocommerce_add_to_cart_redirect', 'redirect_to_checkout');
+// function redirect_to_checkout($redirect_url)
+// {
+// 	if (isset($_REQUEST['is_buy_now']) && $_REQUEST['is_buy_now']) {
+// 		global $woocommerce;
+// 		$redirect_url = wc_get_checkout_url();
+// 	}
+// 	return $redirect_url;
+// }
 add_filter('woocommerce_product_tabs', 'misha_remove_description_tab', 11);
 
 function misha_remove_description_tab($tabs)
@@ -232,7 +232,6 @@ add_action('woocommerce_single_product_summary', 'woocommerce_template_single_ti
 function woocommerce_products_payments()
 {
 	get_template_part('template-parts/woo/product', 'payments');
-
 }
 add_action('woocommerce_before_add_to_cart_button', 'woocommerce_products_payments', 5);
 
@@ -240,25 +239,25 @@ function woocommerce_products_intro()
 {
 	echo 'Un curso de Diego La Loggia <br/>';
 	the_field('docentes');
-
 }
 add_action('woocommerce_single_product_summary', 'woocommerce_products_intro', 5);
 
 /**
  * Remove related products output
  */
-remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
+remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20);
 
 /**
  * Inner menu
  */
-function register_my_menu() {
-    register_nav_menu('inner', __('Inner Menu'));
+function register_my_menu()
+{
+	register_nav_menu('inner', __('Inner Menu'));
 }
 
 add_action('init', 'register_my_menu');
 
-add_filter( 'auto_update_plugin', '__return_false' );
+add_filter('auto_update_plugin', '__return_false');
 
 // add_filter( 'woocommerce_cart_item_quantity', 'wc_cart_item_quantity', 10, 3 );
 // function wc_cart_item_quantity( $product_quantity, $cart_item_key, $cart_item ){
@@ -299,3 +298,47 @@ add_filter( 'auto_update_plugin', '__return_false' );
 // 	echo '</div>';	
 // }
 // add_action( 'woocommerce_product_options_inventory_product_data', 'wc_qty_add_product_field' );
+add_filter('woocommerce_endpoint_orders_title', 'change_my_account_edit_account_title', 10, 2);
+function change_my_account_edit_account_title($title, $endpoint)
+{
+	$title = __("Cursos adquiridos", "woocommerce");
+
+	return $title;
+}
+function wpb_woo_my_account_order()
+{
+	$myorder = array(
+		'my-courses' => __('Mis cursos', 'sensei'),
+		'edit-account'       => __('Modificar mi cuenta', 'woocommerce'),
+		'orders'             => __('Cursos adquiridos', 'woocommerce'),
+		// 'payment-methods'    => __('Medios de pago', 'woocommerce'),
+		'customer-logout'    => __('Logout', 'woocommerce'),
+	);
+
+	return $myorder;
+}
+add_filter('woocommerce_account_menu_items', 'wpb_woo_my_account_order');
+
+add_filter('woocommerce_checkout_coupon_message', 'bbloomer_have_coupon_message');
+
+function bbloomer_have_coupon_message()
+{
+	return '<i class="fa fa-ticket" aria-hidden="true"></i> ¿Tienes un cupón? <a href="#" class="showcoupon">Click here to enter your discount code</a>';
+}
+
+function bt_rename_coupon_field_on_cart( $translated_text, $text, $text_domain ) {
+	// bail if not modifying frontend woocommerce text
+	if ( is_admin() || 'woocommerce' !== $text_domain ) {
+		return $translated_text;
+	}
+	if ( 'Coupon:' === $text ) {
+		$translated_text = 'Por favor, si tenés más de un cupón ingresalos de a uno y luego hacé click en "Aplicar cupón". De esta manera se aplicará el descuento correspondiente por cupón:';
+	}
+
+	return $translated_text;
+}
+add_filter( 'gettext', 'bt_rename_coupon_field_on_cart', 10, 3 );
+add_filter( 'woocommerce_coupon_error', 'bt_rename_coupon_label', 10, 3 );
+add_filter( 'woocommerce_coupon_message', 'bt_rename_coupon_label', 10, 3 );
+add_filter( 'woocommerce_cart_totals_coupon_label', 'bt_rename_coupon_label',10, 1 );
+add_filter( 'woocommerce_checkout_coupon_message', 'bt_rename_coupon_message_on_checkout' );

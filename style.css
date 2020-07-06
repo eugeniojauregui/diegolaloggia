@@ -54,7 +54,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
 
- html {
+html {
     line-height: 1.15;
     /* 1 */
     -webkit-text-size-adjust: 100%;
@@ -624,7 +624,7 @@ textarea {
     border: 1px solid #ccc;
     border-radius: 3px;
     padding: 3px;
-    width: 100%;
+    width: 86%;
 }
 
 input[type="text"]:focus,
@@ -934,7 +934,7 @@ a:active {
 .page-content,
 .entry-content,
 .entry-summary {
-    margin: 1.5em 0 0;
+    margin: 0;
 }
 
 .page-links {
@@ -1622,9 +1622,18 @@ p.name {
     flex-wrap: wrap;
 }
 
-.entry-header:after {
+.entry-header.bg:after {
     content: '';
-    background: rgba(45, 32, 43, .5);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(45, 32, 43, 0.4);
+}
+
+.page-template-default .entry-header:after {
+    content: '';
     width: 100%;
     height: 100%;
     position: absolute;
@@ -1632,14 +1641,69 @@ p.name {
     left: 0;
 }
 
-.page .entry-header:after {
-    content: '';
-    /* background: rgba(173, 229, 0, 0.26); */
+section#sensei-user-courses .meter {
+    display: none;
+}
+
+section#sensei-user-courses .course-lesson-progress {
+    display: none;
+}
+
+ul.course-container {
+    display: flex;
+    text-align: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+section.course-content img {
     width: 100%;
-    height: 100%;
+    max-width: 100% !important;
+    float: none;
+}
+
+section#sensei-user-courses section.course-content p {
+    padding: 25px;
+    font-size: 16px;
+}
+
+.sensei .entry-content section p.course-excerpt {
+    margin: 0 !important;
+}
+
+.sensei .entry-content section a,
+.sensei .entry-content section a img {
+    display: block;
+    margin: 0;
+    position: relative;
+}
+
+section#sensei-user-courses .course-container li {
+    margin: 50px !important;
+    max-width: 35%;
+    border: 1px solid #eee;
+    padding: 0 !important;
+    box-shadow: 1px 1px 3px 0px #eee;
+}
+
+section#sensei-user-courses .course-container li section a:after {
+    content: 'Ingresar al curso';
+    width: 100%;
+    height: 40px;
     position: absolute;
-    top: 0;
-    left: 0;
+    bottom: 0;
+    text-transform: uppercase;
+    font-weight: 700;
+    background: #ade500;
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    align-items: center;
+}
+
+section#sensei-user-courses .course-container li section h3 a:after,
+section#sensei-user-courses .course-container li section div a:after {
+    content: none;
 }
 
 .entry-header h1.entry-title {
@@ -1702,6 +1766,21 @@ h1.entry-title {
     flex-basis: 0;
 }
 
+.wp-block-columns.fit-image img {
+    max-height: 100px;
+}
+
+.wp-block-columns.fit-image .wp-block-image,
+.wp-block-columns.fit-image .wp-block-image .aligncenter {
+    margin: 0 auto;
+}
+
+h3#bigger-light {
+    font-size: 36px;
+    font-weight: 300;
+    margin: 10px 0;
+}
+
 .blocked .green-back,
 .blocked .black-back {
     margin: 5px !important
@@ -1724,7 +1803,11 @@ h1.entry-title {
     max-width: 75%;
     margin: auto;
 }
-.custom-block-columns.wp-block-column:not(:first-child) {margin-left:0px}
+
+.custom-block-columns.wp-block-column:not(:first-child) {
+    margin-left: 0px
+}
+
 h3.has-text-align-center {
     text-transform: uppercase;
 }
@@ -2015,8 +2098,31 @@ button.pushbutton-wide {
     border-radius: 0;
     border: none;
 }
-article#post-498 {background:#2d202b}
-article#post-498 .entry-content {max-width: 900px;margin: auto;font-size:16px;color:#fff}
+
+article#post-498 {
+    background: #2d202b
+}
+
+article#post-498 .entry-content {
+    max-width: 900px;
+    margin: auto;
+    font-size: 16px;
+    color: #fff
+}
+
+.site-footer .fa {
+    width: 40px;
+    height: 40px;
+    background: #2d202b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    border-radius: 50px;
+    color: #ade500;
+    margin: auto;
+    padding: 0;
+}
 
 @media only screen and (max-width: 420px) {
     .main-navigation {

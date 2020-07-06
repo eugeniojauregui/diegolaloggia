@@ -38,6 +38,12 @@
 				</a>
 			</li>
 			<li>
+				<a href="https://www.youtube.com/channel/UCmsKrh0YtsbucdvQh04EXNA" target="_blank">
+					<i class="fa fa-youtube-play"></i>
+					<div class="social-name">YouTube</div>
+				</a>
+			</li>
+			<li>
 				<a href="mailto:diegolaloggia@gmail.com" target="_blank">
 					<img src="<?php bloginfo('template_directory'); ?>/img/icon-mailing.svg" alt="Email" />
 					<div class="social-name">diegolaloggia@gmail.com</div>

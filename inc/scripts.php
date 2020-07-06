@@ -8,6 +8,7 @@ function wp_scripts_destinemos()
     /** JS * */
     wp_enqueue_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.js', array(), '1.8.0', true);
     wp_enqueue_script('scroller', get_template_directory_uri() . '/js/scroller.js', array(), '1.0.0', true);
+    wp_enqueue_script('fontawesome', '//use.fontawesome.com/83616f5206.js', array(), '1.0.0', true);
 
     if (is_front_page()) {
         // /** CSS * */

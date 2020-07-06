@@ -10,8 +10,11 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<?php $featured_img_url = get_the_post_thumbnail_url(get_the_ID(),'full'); ?>
-	<header class="entry-header" style="background-image:url(<?= esc_url($featured_img_url) ?>)">
+<?php if (get_field('banner')) { ?>
+    <header class="entry-header bg" style="background-image:url(<?php the_field('banner'); ?>)">
+    <?php } else { ?>
+        <header class="entry-header">
+        <?php }; ?>
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
 

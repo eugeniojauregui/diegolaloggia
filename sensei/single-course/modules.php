@@ -53,24 +53,6 @@ function slugify($sluggable)
     ?>
         <?php if (sensei_module_has_lessons()) : ?>
             <article class="module <?= slugify(sensei_get_the_module_title()) ?>">
-                <?php if (slugify(sensei_get_the_module_title()) === 'bloque-terico-unidad-1') { ?>
-                    <div class="full-body-info">
-                        <div class="white-back flex-center">
-                            <div>
-                                <img src="<?php bloginfo('template_directory'); ?>/img/video-class.svg" alt="Videos" />
-                                En cada bloque encontrarás distintos
-                                videos explicativos que podrás ir
-                                viendo a tu tiempo, uno a uno.
-                            </div>
-                        </div>
-                        <div class="green-back flex-center">
-                            <div>
-                                <img src="<?php bloginfo('template_directory'); ?>/img/alert.svg" alt="Atención" />
-                                No te olvides de realizar los chequeos médicos correspondientes previos a cualquier actívidad física.
-                            </div>
-                        </div>
-                    </div>
-                <?php } ?>
                 <?php
 
                 /**

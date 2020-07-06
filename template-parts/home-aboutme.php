@@ -2,7 +2,7 @@
     <h2>SOBRE MI</h2>
     <div class="container">
         <div class="pict">
-            <img src="<?php bloginfo('template_directory'); ?>/img/about-001.jpg" alt="Sobre mi" />
+            <img src="<?php bloginfo('template_directory'); ?>/img/about-me.jpg" alt="Sobre mi" />
         </div>
         <div class="info">
             <p>Soy preparador físico personal, de grupos y entrenador de fútbol. Cuento con más de 10 años de

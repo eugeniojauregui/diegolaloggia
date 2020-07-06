@@ -102,11 +102,14 @@ section.sensei-breadcrumb {
     text-align: center;
     width: 100%;
     display: block;
+    padding: 10px 0;
+    display: none;
 }
 
 .meter {
     max-width: 75%;
     margin: auto;
+    margin-top: 25px;
 }
 
 .course .course-meta,
@@ -127,10 +130,15 @@ section.sensei-breadcrumb {
     padding: 0 200px;
     text-align: center;
 }
+
 .wp-block-column p {
-    padding: 0 100px;
+    padding: 0 50px;
 }
-.course header h1 {display:none}
+
+.course header h1 {
+    display: none
+}
+
 .course .entry-header {
     /* display: none; */
     height: 300px;
@@ -139,10 +147,15 @@ section.sensei-breadcrumb {
     align-items: center;
     background: rgb(45, 32, 43);
 }
+
 .course .entry-header:after {
     background: rgba(45, 32, 43, 0.36);
 }
-.course .entry-header h1 {display:block}
+
+.course .entry-header h1 {
+    display: block
+}
+
 .course-lessons article header h2 {
     background: #2d202b;
     color: #fff;
@@ -189,7 +202,7 @@ span.lesson-author {
 
 .gray-back {
     background: #eee;
-    padding: 50px;
+    padding: 50px 25px;
 }
 
 .wp-block-table {
@@ -202,6 +215,12 @@ span.lesson-author {
 .wp-block-table tr:first-child {
     background: #ade500 !important;
 }
+.wp-block-table.heat {
+    color:#333!important;
+}
+.wp-block-table.heat tr:first-child {
+    background: #fff!important;
+}
 
 .wp-block-table tr td {
     padding: 6px;
@@ -211,6 +230,21 @@ span.lesson-author {
     background: #eee;
 }
 
+.wp-block-table.heat  tr:nth-child(odd), .wp-block-table.heat  tr:nth-child(even) {
+    background: #eee;
+    margin-bottom: 5px;
+    border-bottom: 5px solid #fff;
+}
+.wp-block-table.heat tr td:nth-child(3) {
+    background: #fff;
+}
+.wp-block-table.heat tr:nth-child(1) td:nth-child(1) {
+    background: #fff;
+}
+
+.wp-block-table.heat tr td:nth-child(1) {
+    background: #ade500;
+}
 .wp-block-table table {
     border-bottom: 2px solid #333;
     border-collapse: collapse;
@@ -242,6 +276,11 @@ span.lesson-author {
 .wp-block-table tr td:nth-child(even) {
     color: #b00a0a;
 }
+
+.wp-block-table.heat tr td:nth-child(even) {
+    color: inherit;
+}
+
 .wp-block-table.no-red tr td:nth-child(even) {
     color: inherit;
 }
@@ -632,8 +671,28 @@ p.module-description {
     max-width: 96%;
     margin: auto !important;
     border-radius: 0px !important;
-    margin-bottom: 25px!important;
+    margin-bottom: 25px !important;
 }
+
 .course .module.bloque-prctico .module-lessons ul {
-    padding: 0 10%!important;
+    padding: 0 10% !important;
+}
+
+a#sensei-user-courses-all-action {
+    display: none;
+}
+
+.postid-215 .progress,
+.postid-215 .meter,
+.postid-215 .status,
+.course .module .module-lessons ul li.completed a:before,
+.course .module.full-body .module-lessons .lessons-list li a:before,
+.course .module.rutinas-especiales .module-lessons .lessons-list li a:before,
+.module-full-body input.quiz-submit.complete,
+.module-full-body .sensei-message.tick,
+.module-calentamiento .sensei-message.tick {
+    display: none;
+}
+.course .sensei-course-meta, .course-container .course .sensei-course-meta, .course-container .sensei-course-meta {
+    display: none;
 }
