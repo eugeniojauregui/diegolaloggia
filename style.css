@@ -937,6 +937,10 @@ a:active {
     margin: 0;
 }
 
+.single-landings .entry-content {
+    font-size: 24px;
+}
+
 .page-links {
     clear: both;
     margin: 0 0 1.5em;
@@ -1622,6 +1626,10 @@ p.name {
     flex-wrap: wrap;
 }
 
+.single-landings .entry-header h1 {
+    font-size: 150px;
+}
+
 .entry-header.bg:after {
     content: '';
     width: 100%;
@@ -1764,6 +1772,86 @@ h1.entry-title {
     height: auto;
     flex-grow: 1;
     flex-basis: 0;
+}
+
+.bigtext {
+    font-size: 56px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 35px;
+    margin-bottom: 50px;
+}
+
+.bigtext strong {
+    font-size: 36px;
+}
+
+.black-back.plus {
+    font-size: 24px;
+    padding: 25px;
+}
+
+.black-back.plus:after {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 15px solid #ffffff;
+    content: '';
+    margin: auto;
+    display: block;
+    margin-top: 25px;
+    position: relative;
+    top: 0px;
+    left: 10px;
+    transform: translateX(-50%);
+}
+
+.black-back.coupon {
+    display: block;
+    font-size: 36px;
+    line-height: 40px;
+}
+
+.black-back.coupon:after {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 15px solid #ffffff;
+    content: '';
+    margin: auto;
+    display: block;
+    margin-top: 25px;
+    position: relative;
+    top: 0px;
+    left: 10px;
+    transform: translateX(-50%);
+    margin-bottom: -15px;
+}
+
+.wp-block-button.green-btn a {
+    border-radius: 0px;
+    background: #ace400;
+    font-family: 'Heroic', sans-serif;
+    color: #2d202b;
+    text-transform: uppercase;
+    font-size: 42px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    padding: 4px 24px;
+}
+
+.wp-block-button.white-btn a {
+    border-radius: 0px;
+    background: #ffffff;
+    font-family: 'Heroic', sans-serif;
+    color: #2d202b;
+    text-transform: uppercase;
+    font-size: 42px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    padding: 4px 24px;
 }
 
 .wp-block-columns.fit-image img {
@@ -2124,6 +2212,74 @@ article#post-498 .entry-content {
     padding: 0;
 }
 
+.gray-back {
+    background: #eee;
+    padding: 50px 25px;
+}
+
+.darkgray-back {
+    background: #6d6e71;
+    padding: 50px 25px;
+    position: relative;
+    color: #fff;
+    margin: 0;
+}
+
+.wp-block-columns.landing-columns {
+    text-align: center;
+    max-width: 80%;
+    margin: auto;
+    line-height: 20px;
+    padding: 25px 0;
+}
+
+.wp-block-columns.landing-columns figure {
+    margin: auto;
+    font-size: 18px;
+}
+
+.wp-block-columns.landing-columns figure img {
+    min-width: 200px;
+    min-height: 200px;
+    border-radius: 100%;
+}
+
+.darkgray-back.plus:before {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 15px solid #ade500;
+    content: '';
+    margin: auto;
+    display: block;
+    margin-top: 25px;
+    position: relative;
+    top: -20px;
+    left: 10px;
+    transform: translateX(-50%);
+}
+
+.gray-back.plus:before {
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 15px solid #2d202b;
+    content: '';
+    margin: auto;
+    display: block;
+    margin-top: 25px;
+    position: relative;
+    top: -20px;
+    left: 10px;
+    transform: translateX(-50%);
+}
+
+h2.has-text-align-center.gray-back.plus {
+    margin: 0;
+}
+
 @media only screen and (max-width: 420px) {
     .main-navigation {
         width: 100% !important
@@ -2185,7 +2341,8 @@ article#post-498 .entry-content {
 
     .about .container .pict,
     .about .container .info {
-        width: 100vw
+        width: 100vw;
+        height: 100vw;
     }
 
     .about .container .info {
@@ -2208,16 +2365,62 @@ article#post-498 .entry-content {
     }
 
     .social ul {
-        max-width: 75%;
-        display: block;
+        max-width: 100%;
+        display: flex;
         justify-content: space-between;
         align-items: flex-start;
         margin: auto;
+        flex-wrap: wrap;
     }
 
     .social ul li {
         margin: 10px;
         font-size: 14px;
         font-weight: 700;
+        width: 40%;
+    }
+
+    .social ul li .social-name {
+        display: none;
+    }
+
+    .site-info {
+        display: block;
+        height: auto;
+        text-align: center;
+        padding: 20px 25%;
+    }
+
+    .home .wpcf7 form .group-field {
+        width: 100%
+    }
+
+    .home .wpcf7 form .btn-field {
+        max-width: 100%
+    }
+
+    .users {
+        top: 0px
+    }
+
+    .wp-block-embed-vimeo {
+        height: auto;
+        margin: 0
+    }
+
+    /* Make sure embeds and iframes fit their containers. */
+    embed,
+    iframe,
+    object {
+        max-width: 100%;
+        width: 100%;
+        height: fit-content;
+        min-height: fit-content;
+        display: block;
+        margin-bottom: 50px;
+    }
+
+    .green-back .wpcf7 form .group-field {
+        width: 100%
     }
 }

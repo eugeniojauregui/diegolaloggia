@@ -175,6 +175,13 @@ if (class_exists('WooCommerce')) {
  * Load CSS & JS scripts.
  */
 require get_template_directory() . '/inc/scripts.php';
+
+/**
+ * Load CSS & JS scripts.
+ */
+require get_template_directory() . '/inc/landings.php';
+
+
 /**
  * Sensei.
  */
