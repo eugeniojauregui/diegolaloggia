@@ -96,7 +96,7 @@
                         Podrás consultar y realizar los cursos en el momento que desees.</li>
 
                     <li><strong>¿A quién debo contactar por consultas, dudas o inconvenientes?</strong>
-                        Por cualquier consulta que tengas puedes contactar con <a href="mailto:info@diegolaloggia.com">info@diegolaloggia.com</a></li>
+                        Por cualquier consulta que tengas puedes contactar con <a href="mailto:diegolaloggia@gmail.com">diegolaloggia@gmail.com</a></li>
 
                     <li><strong>¿Métodos de pago utilizados?</strong>
                         Se podrá abonar mediante tarjeta de crédito, PayPal o transferencia bancaria.</li>

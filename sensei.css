@@ -215,11 +215,13 @@ span.lesson-author {
 .wp-block-table tr:first-child {
     background: #ade500 !important;
 }
+
 .wp-block-table.heat {
-    color:#333!important;
+    color: #333 !important;
 }
+
 .wp-block-table.heat tr:first-child {
-    background: #fff!important;
+    background: #fff !important;
 }
 
 .wp-block-table tr td {
@@ -230,14 +232,17 @@ span.lesson-author {
     background: #eee;
 }
 
-.wp-block-table.heat  tr:nth-child(odd), .wp-block-table.heat  tr:nth-child(even) {
+.wp-block-table.heat tr:nth-child(odd),
+.wp-block-table.heat tr:nth-child(even) {
     background: #eee;
     margin-bottom: 5px;
     border-bottom: 5px solid #fff;
 }
+
 .wp-block-table.heat tr td:nth-child(3) {
     background: #fff;
 }
+
 .wp-block-table.heat tr:nth-child(1) td:nth-child(1) {
     background: #fff;
 }
@@ -245,6 +250,7 @@ span.lesson-author {
 .wp-block-table.heat tr td:nth-child(1) {
     background: #ade500;
 }
+
 .wp-block-table table {
     border-bottom: 2px solid #333;
     border-collapse: collapse;
@@ -693,6 +699,52 @@ a#sensei-user-courses-all-action {
 .module-calentamiento .sensei-message.tick {
     display: none;
 }
-.course .sensei-course-meta, .course-container .course .sensei-course-meta, .course-container .sensei-course-meta {
+
+.course .sensei-course-meta,
+.course-container .course .sensei-course-meta,
+.course-container .sensei-course-meta {
     display: none;
+}
+
+@media only screen and (max-width: 420px) {
+    .course p {
+        padding: 10px
+    }
+
+    .wp-block-image img {
+        max-width: 94%
+    }
+
+    .flex-center {
+        width: 100%
+    }
+
+    .lesson .video {
+        min-height: fit-content !important;
+    }
+
+    .wp-block-table {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    h3.lighter {
+        max-width: 90%
+    }
+
+    .lesson p {
+        padding: 0 10px
+    }
+
+    .lesson ol {
+        max-width: 70%
+    }
+
+    .ht-mcs-float-widget {
+        display: none
+    }
+
+    .single.logged-in #main .type-course header h1 {
+        font-size: 60px
+    }
 }

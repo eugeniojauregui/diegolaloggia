@@ -46,8 +46,9 @@ if ($product->is_in_stock()) : ?>
         ?>
 
         <button type="submit" name="add-to-cart" value="<?php echo esc_attr($product->get_id()); ?>" class="single_add_to_cart_button button alt" id="buy_now_button">
-            <?php echo esc_html('Comprar ahora'); ?>
+            <?php echo esc_html('Añadir al carrito'); ?>
         </button>
+        <div class="addcart">Finalizar compra en el carrito</div>
         <input type="hidden" name="is_buy_now" id="is_buy_now" value="0" />
 
         <?php do_action('woocommerce_after_add_to_cart_button'); ?>

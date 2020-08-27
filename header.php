@@ -18,6 +18,18 @@
 	<meta charset="<?php bloginfo('charset'); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-157883984-3"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-157883984-3');
+	</script>
 
 	<?php wp_head(); ?>
 </head>
@@ -58,6 +70,11 @@
 				<?php } else { ?>
 					<div class="user-name"><a href="<?php echo esc_url(home_url('/')); ?>my-account">INGRESAR <img src="<?php bloginfo('template_directory'); ?>/img/icon-enter.svg" alt="Ingresar" /></a></div>
 				<?php } ?>
+			</div>
+			<div class="hamburger">
+			</div>
+			<div class="ingress">
+				<a href="<?php echo esc_url(home_url('/')); ?>my-account"><img src="<?php bloginfo('template_directory'); ?>/img/icon-enter.svg" alt="Ingresar" /></a>
 			</div>
 			<nav id="site-navigation" class="main-navigation">
 				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e('Primary Menu', 'dll'); ?></button>

@@ -62,7 +62,16 @@
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
-
+<script>
+	(function($) {
+		$(document).ready(function() {
+			$('.hamburger').on('click', function() {
+				$(this).toggleClass('cross');
+				$('.main-navigation ul').toggleClass('deploy');
+			});
+		});
+	})(jQuery);
+</script>
 </body>
 
 </html>

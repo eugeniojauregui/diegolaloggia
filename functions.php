@@ -326,26 +326,26 @@ function wpb_woo_my_account_order()
 }
 add_filter('woocommerce_account_menu_items', 'wpb_woo_my_account_order');
 
-add_filter('woocommerce_checkout_coupon_message', 'bbloomer_have_coupon_message');
+// add_filter('woocommerce_checkout_coupon_message', 'bbloomer_have_coupon_message');
 
-function bbloomer_have_coupon_message()
-{
-	return '<i class="fa fa-ticket" aria-hidden="true"></i> ¿Tienes un cupón? <a href="#" class="showcoupon">Click here to enter your discount code</a>';
-}
+// function bbloomer_have_coupon_message()
+// {
+// 	return '<i class="fa fa-ticket" aria-hidden="true"></i> ¿Tienes un cupón? <a href="#" class="showcoupon">Click here to enter your discount code</a>';
+// }
 
-function bt_rename_coupon_field_on_cart( $translated_text, $text, $text_domain ) {
-	// bail if not modifying frontend woocommerce text
-	if ( is_admin() || 'woocommerce' !== $text_domain ) {
-		return $translated_text;
-	}
-	if ( 'Coupon:' === $text ) {
-		$translated_text = 'Por favor, si tenés más de un cupón ingresalos de a uno y luego hacé click en "Aplicar cupón". De esta manera se aplicará el descuento correspondiente por cupón:';
-	}
+// function bt_rename_coupon_field_on_cart( $translated_text, $text, $text_domain ) {
+// 	// bail if not modifying frontend woocommerce text
+// 	if ( is_admin() || 'woocommerce' !== $text_domain ) {
+// 		return $translated_text;
+// 	}
+// 	if ( 'Coupon:' === $text ) {
+// 		$translated_text = 'Por favor, si tenés más de un cupón ingresalos de a uno y luego hacé click en "Aplicar cupón". De esta manera se aplicará el descuento correspondiente por cupón:';
+// 	}
 
-	return $translated_text;
-}
-add_filter( 'gettext', 'bt_rename_coupon_field_on_cart', 10, 3 );
-add_filter( 'woocommerce_coupon_error', 'bt_rename_coupon_label', 10, 3 );
-add_filter( 'woocommerce_coupon_message', 'bt_rename_coupon_label', 10, 3 );
-add_filter( 'woocommerce_cart_totals_coupon_label', 'bt_rename_coupon_label',10, 1 );
-add_filter( 'woocommerce_checkout_coupon_message', 'bt_rename_coupon_message_on_checkout' );
+// 	return $translated_text;
+// }
+// add_filter( 'gettext', 'bt_rename_coupon_field_on_cart', 10, 3 );
+// add_filter( 'woocommerce_coupon_error', 'bt_rename_coupon_label', 10, 3 );
+// add_filter( 'woocommerce_coupon_message', 'bt_rename_coupon_label', 10, 3 );
+// add_filter( 'woocommerce_cart_totals_coupon_label', 'bt_rename_coupon_label',10, 1 );
+// add_filter( 'woocommerce_checkout_coupon_message', 'bt_rename_coupon_message_on_checkout' );

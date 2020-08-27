@@ -20,4 +20,5 @@ get_template_part('template-parts/home', 'aboutme');
 get_template_part('template-parts/home', 'courses');
 get_template_part('template-parts/home', 'testimonials');
 get_template_part('template-parts/home', 'contact');
+get_sidebar();
 get_footer();

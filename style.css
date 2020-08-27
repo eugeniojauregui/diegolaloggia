@@ -164,7 +164,10 @@ samp {
  */
 
 small {
-    font-size: 80%;
+    font-size: 60%;
+    display: block;
+    font-weight: 400;
+    max-width: 300px;
 }
 
 /**
@@ -431,6 +434,10 @@ textarea {
     font-size: 18px;
     line-height: 1.5;
     font-weight: 300;
+}
+
+.site-content {
+    padding-top: 160px;
 }
 
 h1,
@@ -753,7 +760,7 @@ a:active {
 /* Small menu. */
 .menu-toggle,
 .main-navigation.toggled ul {
-    display: block;
+    display: none;
     position: absolute;
     width: 100%;
     left: 0;
@@ -1079,6 +1086,9 @@ object {
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
+    position: fixed;
+    width: 100%;
+    z-index: 9999999999;
 }
 
 .site-branding {
@@ -1088,7 +1098,7 @@ object {
 }
 
 .site-branding img {
-    height: auto;
+    height: 100%;
     width: 100%;
     max-height: 110px;
 }
@@ -1107,7 +1117,7 @@ object {
 
 .main .content {
     max-width: 500px;
-    width: 96%;
+    width: 90%;
     margin: auto;
     text-align: center;
 }
@@ -1719,7 +1729,7 @@ section#sensei-user-courses .course-container li section div a:after {
 }
 
 h1.entry-title {
-    font-size: 52px;
+    font-size: 50px;
     font-weight: 400;
     text-transform: uppercase;
     margin: 0;
@@ -1871,7 +1881,10 @@ h3#bigger-light {
 
 .blocked .green-back,
 .blocked .black-back {
-    margin: 5px !important
+    margin: 5px !important;
+    word-break: normal;
+    overflow-wrap: normal;
+    font-size: 15px;
 }
 
 .wp-block-group.extra {
@@ -2062,7 +2075,7 @@ button.pushbutton-wide {
 }
 
 .post-30 .entry-header h1 {
-    color: #2d202b;
+    color: #2d202b !important;
 }
 
 .post-30 {
@@ -2280,7 +2293,116 @@ h2.has-text-align-center.gray-back.plus {
     margin: 0;
 }
 
+.hamburger,
+.ingress {
+    visibility: hidden
+}
+
+aside#secondary {
+    position: fixed;
+    top: 50%;
+    width: 0px;
+    background: #f3f3f3;
+    right: 0;
+    transform: translateY(-50%);
+    padding: 0;
+    z-index: 999999999999;
+    transition: ease all 0.3s;
+    max-height: 400px;
+    height: 400px;
+}
+
+aside#secondary:before {
+    width: 40px;
+    height: 40px;
+    display: block;
+    content: '$';
+    position: absolute;
+    left: -40px;
+    background: #a3d800;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: -2px 0px 5px #00000066;
+    color: #fff;
+    font-weight: 800;
+    font-size: 22px;
+}
+
+aside#secondary:hover {
+    width: 330px;
+    box-shadow: 0 0 10px #0000007a;
+    padding: 25px;
+    padding-bottom: 0;
+    min-height: 400px;
+}
+
+aside#secondary section {
+    width: 0;
+    overflow: hidden;
+    height: 0;
+    transition: ease all 0.3s;
+    opacity: 0;
+}
+
+aside#secondary:hover section {
+    width: fit-content;
+    overflow: visible;
+    height: fit-content;
+    opacity: 1;
+}
+
+aside#secondary:hover h2 {
+    display: block;
+}
+
+aside#secondary:hover p {
+    display: block;
+}
+
+h2.widget-title {
+    font-size: 28px;
+    margin: 0;
+    line-height: normal;
+}
+
+.widget p {
+    font-size: 14px;
+    text-align: center;
+}
+
+ul.currency_switcher {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+ul.currency_switcher li {
+    width: 100%;
+    margin: 4px;
+    float: none;
+}
+
+ul.currency_switcher li a {
+    width: 100%;
+    text-align: center;
+}
+
 @media only screen and (max-width: 420px) {
+    .site-header {
+        position: fixed;
+    }
+
+    .site-branding {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
     .main-navigation {
         width: 100% !important
     }
@@ -2289,13 +2411,19 @@ h2.has-text-align-center.gray-back.plus {
         display: block;
         width: 100%;
         position: relative;
-        top: 40px;
+        top: 10px;
         height: auto;
         background: #2d202b;
+        z-index: 9999;
+        transition: ease all 0.3s;
+        height: 0;
+        overflow: hidden;
+        opacity: 0;
+        border-top: 5px solid #ade500;
     }
 
     .main-navigation li {
-        height: 40px;
+        min-height: 40px;
         border-bottom: 1px solid #ade500;
         line-height: 40px;
     }
@@ -2342,7 +2470,7 @@ h2.has-text-align-center.gray-back.plus {
     .about .container .pict,
     .about .container .info {
         width: 100vw;
-        height: 100vw;
+        min-height: 100vw;
     }
 
     .about .container .info {
@@ -2422,5 +2550,107 @@ h2.has-text-align-center.gray-back.plus {
 
     .green-back .wpcf7 form .group-field {
         width: 100%
+    }
+
+    section#sensei-user-courses .course-container li {
+        width: 100%;
+        max-width: none;
+        margin: 25px !important;
+    }
+
+    .main-navigation ul ul {
+        position: relative;
+        display: block;
+        left: auto;
+    }
+
+    .hamburger {
+        visibility: visible;
+        width: 24px;
+        height: 4px;
+        border-radius: 3px;
+        background: #ade500;
+        position: absolute;
+        left: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: ease all 0.3s;
+    }
+
+    .hamburger:before {
+        content: '';
+        width: 24px;
+        height: 4px;
+        border-radius: 3px;
+        background: #ade500;
+        display: block;
+        position: relative;
+        top: -9px;
+        transition: ease all 0.3s;
+    }
+
+    .hamburger:after {
+        content: '';
+        width: 24px;
+        height: 4px;
+        border-radius: 3px;
+        background: #ade500;
+        display: block;
+        position: relative;
+        top: 5px;
+        transition: ease all 0.3s;
+    }
+
+    .hamburger.cross {
+        background: transparent;
+    }
+
+    .hamburger.cross:before {
+        transform: rotate(45deg);
+        top: 0px;
+    }
+
+    .hamburger.cross:after {
+        transform: rotate(-45deg);
+        top: -4px;
+    }
+
+    .main-navigation ul.deploy {
+        height: auto;
+        opacity: 1;
+        z-index: 9999999;
+    }
+
+    .ingress {
+        visibility: visible;
+        width: 24px;
+        height: 24px;
+        border-radius: 3px;
+        background: transparent;
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: ease all 0.3s;
+    }
+
+    .post-30 .wpcf7 form .group-field {
+        width: 100%
+    }
+
+    .site-branding img {
+        max-height: 90px;
+        margin-top: 25px;
+    }
+
+    .lslide {
+        padding: 0 10vw;
+        text-align: center;
+        min-height: 400px !important;
+    }
+
+    .people {
+        line-height: 18px;
+        font-size: 16px
     }
 }

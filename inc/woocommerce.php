@@ -268,3 +268,27 @@ if ( ! function_exists( 'dll_woocommerce_header_cart' ) ) {
 		<?php
 	}
 }
+function cw_change_product_price_display( $price ) {
+    $price .= '<small>El cobro de los cursos se realizará en EUROS. Los precios en divisas distintas al EURO son a modo informativo. La cotización de la conversión final dependerá del medio de pago utilizado y el banco emisor de la tarjeta al cierre de la misma.</small>';
+    return $price;
+}
+add_filter( 'woocommerce_get_price_html', 'cw_change_product_price_display' );
+add_filter( 'woocommerce_cart_item_price', 'cw_change_product_price_display' );
+
+add_action( 'woocommerce_thankyou', 'bbloomer_add_content_thankyou' );
+
+function bbloomer_add_content_thankyou() {
+echo '<h3 class="pthanks">Los datos de acceso a tu cuenta se enviarán por correo electrónico. Iniciando sesión en la página podrás acceder a los cursos adquiridos y a la administración de tu perfil. En caso de que no lo veas en el inbox, revisa tu carpeta de correo no deseado. Ante cualquier duda mandanos un mail a <a href="mailto:diegolaloggia@gmail.com">diegolaloggia@gmail.com</a>.</h3>';
+}
+// add_action( 'woocommerce_after_add_to_cart_button', 'misha_before_add_to_cart_btn' );
+ 
+// function misha_before_add_to_cart_btn(){
+// 	echo '<a href="">Ir a pagar</a>';
+// }
+
+// add_filter( 'woocommerce_default_address_fields' , 'bbloomer_rename_state_province', 9999 );
+ 
+// function bbloomer_rename_state_province( $fields ) {
+//     $fields['state']['label'] = 'Province';
+//     return $fields;
+// }
